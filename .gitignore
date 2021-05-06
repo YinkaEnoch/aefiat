@@ -1,3 +1,5 @@
 node_modules
 .aeproject-store
 .DS_Store
+.data
+.env

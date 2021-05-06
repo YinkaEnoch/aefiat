@@ -10,6 +10,8 @@ describe("Query aefiat Oracle", () => {
 
 	before(async () => {
 		deployer = new Deployer("local", ownerKeyPair.secretKey);
+
+		console.log(wallets[3]);
 	});
 
 	it("Deploying query contract", async () => {
@@ -22,14 +24,18 @@ describe("Query aefiat Oracle", () => {
 		);
 		instance = await Promise.resolve(deployedPromise);
 	});
-
+	/*
 	it("Query oracle for a successful transaction record", async () => {
 		let id = "ep7rardw";
-		queryId = await instance.queryTx(id, {
-			queryFee: "200000000000000",
-			queryTtl: { type: "delta", value: 20 },
-			responseTtl: { type: "delta", value: 20 },
-		});
+		queryId = (
+			await instance.queryTx(id, {
+				queryFee: "200000000000000",
+				fee: "200000000000000",
+				amount: "200000000000000",
+				queryTtl: { type: "delta", value: 20 },
+				responseTtl: { type: "delta", value: 20 },
+			})
+		).decodedResult;
 		console.log("Query ID: ", queryId);
-	});
+	});*/
 });

@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { Universal, Node, MemoryAccount } = require("@aeternity/aepp-sdk");
 
 const url = "https://testnet.aeternity.io/";
@@ -34,16 +35,16 @@ class QueryUsingSDK {
     console.log("initialized oracle:", this.oracle.id);
   };
 
-  queryOracle = async (sickness) => {
+  queryOracle = async (id) => {
     if (!this.oracle) throw "Oracle not initialized";
-    const query = await this.oracle.postQuery(sickness, {
+    const query = await this.oracle.postQuery(id, {
       queryFee: this.oracle.queryFee,
       // optionally specify ttl
       queryTtl: { type: "delta", value: 20 },
       responseTtl: { type: "delta", value: 20 },
     });
 
-    console.log("posted query for:", sickness, "to:", query.id);
+    console.log("posted query for:", id, "to:", query.id);
     return query;
   };
 
@@ -53,15 +54,15 @@ class QueryUsingSDK {
   };
 }
 
-const runExample = async () => {
-  const example = new QueryUsingSDK();
-  await example.initClient();
-  await example.initOracle(
-    "ok_2K6hBj3aWEsoAPoXPouZjQg7a6K42JrVvyfYECNPBCW5hZ2h1C"
+const runQuery = async () => {
+  const initSDK = new QueryUsingSDK();
+  await initSDK.initClient();
+  await initSDK.initOracle(
+    "ok_26QSujxMBhg67YhbgvjQvsFfGdBrK9ddG4rENEGUq2EdsyfMTC"
   );
 
-  const query = await example.queryOracle("common-cold");
-  await example.pollForResponse(query);
+  const query = await initSDK.queryOracle("kg9q1cmb");
+  await initSDK.pollForResponse(query);
 };
 
-runExample();
+runQuery();
