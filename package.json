@@ -12,13 +12,13 @@
   "author": "Yinka Enoch Adedokun <adedokunyinkaenoch@gmail.com> (https://yinkaenoch.github.io/)",
   "license": "ISC",
   "dependencies": {
-    "@aeternity/aepp-sdk": "^7.7.0",
+    "@aeternity/aepp-sdk": "^8.1.0",
     "aeproject-lib": "^2.2.0",
     "aeproject-logger": "^2.2.0",
     "aeproject-utils": "^2.2.0",
     "axios": "^0.21.1",
     "bignumber.js": "^9.0.1",
-    "dotenv": "^9.0.0",
+    "dotenv": "^9.0.2",
     "prompts": "^2.4.1",
     "qrcode-terminal": "^0.12.0"
   },

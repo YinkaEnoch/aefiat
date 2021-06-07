@@ -14,14 +14,17 @@
  *  OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  *  PERFORMANCE OF THIS SOFTWARE.
  */
-const Deployer = require('aeproject-lib').Deployer;
+const Deployer = require("aeproject-lib").Deployer;
 
 const deploy = async (network, privateKey, compiler, networkId) => {
-    let deployer = new Deployer(network, privateKey, compiler, networkId)
+  let deployer = new Deployer(network, privateKey, compiler, networkId);
 
-    await deployer.deploy("./contracts/ExampleContract.aes")
+  //await deployer.deploy("./contracts/ExampleContract.aes")
+  let deployedOracle = await deployer.deploy("../contracts/txQuery.aes");
+
+  console.log(JSON.stringify(deployedOracle));
 };
 
 module.exports = {
-    deploy
+  deploy,
 };

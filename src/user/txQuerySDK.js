@@ -61,8 +61,7 @@ const runQuery = async () => {
     "ok_26QSujxMBhg67YhbgvjQvsFfGdBrK9ddG4rENEGUq2EdsyfMTC"
   );
 
-  // const query = await initSDK.queryOracle("kg9q1cmb");
-  const query = await initSDK.queryOracle("cp5tydpc");
+  const query = await initSDK.queryOracle("regcp3zm");
   await initSDK.pollForResponse(query);
 };
 
