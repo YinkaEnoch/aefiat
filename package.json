@@ -24,5 +24,9 @@
     "prompts": "^2.4.1",
     "qrcode-terminal": "^0.12.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "engines": {
+    "node": "12.16.1",
+    "npm": "6.14.5"
+  }
 }
