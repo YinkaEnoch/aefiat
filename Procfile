@@ -1,1 +1,1 @@
-web: node ./src/operator/index.js
+web: node index.js

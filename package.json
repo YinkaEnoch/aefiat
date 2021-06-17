@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha ./test/**/*.js --timeout 0 --exit",
     "aetest": "aeproject test",
-    "start": "node ./src/operator/index.js",
+    "start": "node index.js",
+    "start:oracle": "node ./src/operator/index.js",
     "start:sdk": "node src/user/txQuerySDK.js"
   },
   "author": "Yinka Enoch Adedokun <adedokunyinkaenoch@gmail.com> (https://yinkaenoch.github.io/)",
@@ -19,6 +20,7 @@
     "axios": "^0.21.1",
     "bignumber.js": "^9.0.1",
     "dotenv": "^9.0.2",
+    "express": "^4.17.1",
     "prompts": "^2.4.1",
     "qrcode-terminal": "^0.12.0"
   },
