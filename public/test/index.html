@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AEFIAT</title>
+    <link rel="stylesheet" href="style.css" media="all" />
+  </head>
+  <body>
+    <h2>Buy AE</h2>
+    <section class="form-body">
+      <form action="/" id="my-sample-form" method="post">
+        <label for="amount">Amount</label>
+        <input
+          type="text"
+          class="hide"
+          name="amount"
+          id="amount"
+          placeholder="10.00"
+        />
+
+        <label for="card-number">Card Number</label>
+        <div id="card-number"></div>
+
+        <label for="cvv">CVV</label>
+        <div id="cvv"></div>
+
+        <label for="expiration-date">Expiration Date</label>
+        <div id="expiration-date"></div>
+
+        <input type="submit" value="Make Payment" disabled />
+      </form>
+      <output></output>
+    </section>
+
+    <section class="links-body">
+      <a href="tx-query.html" target="_blank" rel="noopener noreferrer">
+        Tx Query (SDK)
+      </a>
+      <!-- <a href="readme.html" target="_blank" rel="noopener noreferrer">README</a> -->
+      <a
+        href="https://developer.paypal.com/braintree/docs/reference/general/testing/node"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Test Cards</a
+      >
+    </section>
+
+    <!-- LOADING PANEL-->
+    <div class="loading-panel is-loading">
+      <div class="spinner"></div>
+      <h3>Loading...</h3>
+    </div>
+
+    <script src="https://js.braintreegateway.com/web/3.76.2/js/client.min.js"></script>
+    <script src="https://js.braintreegateway.com/web/3.76.2/js/hosted-fields.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

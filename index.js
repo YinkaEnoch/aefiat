@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3032;
 
-app.use(express.json());
+app.use(express.static("public"));
 
 require("./src/operator/index.js");
 

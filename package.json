@@ -8,7 +8,8 @@
     "aetest": "aeproject test",
     "start": "node index.js",
     "start:oracle": "node ./src/operator/index.js",
-    "start:sdk": "node src/user/txQuerySDK.js"
+    "start:sdk": "node src/user/txQuerySDK.js",
+    "start:dev": "nodemon index.js"
   },
   "author": "Yinka Enoch Adedokun <adedokunyinkaenoch@gmail.com> (https://yinkaenoch.github.io/)",
   "license": "ISC",

@@ -9,7 +9,6 @@ const path = require("path");
 const qrcode = require("qrcode-terminal");
 const BigNumber = require("bignumber.js");
 
-console.log(process.env.NODE_URL);
 const url = "https://testnet.aeternity.io/";
 
 module.exports = class Aeternity {

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tx Query</title>
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+      *::after,
+      *::before {
+        box-sizing: border-box;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+          "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+          "Helvetica Neue", sans-serif;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column wrap;
+      }
+      h1 {
+        font-size: 2rem;
+        margin-top: auto;
+      }
+      section {
+        margin-top: 1rem;
+        margin-bottom: auto;
+        padding: 2rem;
+        box-shadow: 0 0 2px #444;
+      }
+      input {
+        display: block;
+        width: 100%;
+        margin: 0.5rem auto 1rem;
+        padding: 0.5rem 0.75rem;
+        border: 2px solid #888;
+      }
+      button {
+        display: block;
+        margin: 2rem auto 0.5rem;
+        padding: 0.5rem 2rem;
+        cursor: pointer;
+        border: 2px solid #222;
+        background: none;
+        transition: all 0.2s linear;
+      }
+      button:hover {
+        background: #222;
+        color: #eee;
+      }
+      output {
+        display: block;
+        padding-top: 0.5rem;
+        margin-top: 2rem;
+        border-top: 1px dashed grey;
+      }
+      a {
+        display: block;
+        text-align: center;
+        margin: 1rem auto 2rem;
+        transition: all 0.2s linear;
+      }
+      a:hover {
+        letter-spacing: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>TX Query Page</h1>
+    <section>
+      <form action="" method="POST">
+        <label for="tx-id">Transaction ID</label>
+        <input type="text" name="tx-id" id="tx-id" placeholder="ep7rardw" />
+
+        <button type="submit">Get Details</button>
+      </form>
+
+      <output></output>
+    </section>
+
+    <a href="index.html">Make Payment</a>
+
+    <script>
+      const txID = document.querySelector("#tx-id");
+      const submitBtn = document.querySelector("[type=submit]");
+      const outputPanel = document.querySelector("output");
+
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        outputPanel.textContent = "";
+
+        console.log(txID.value);
+      });
+    </script>
+  </body>
+</html>
