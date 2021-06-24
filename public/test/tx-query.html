@@ -92,17 +92,8 @@
 
     <a href="index.html">Make Payment</a>
 
-    <script>
-      const txID = document.querySelector("#tx-id");
-      const submitBtn = document.querySelector("[type=submit]");
-      const outputPanel = document.querySelector("output");
-
-      document.querySelector("form").addEventListener("submit", (e) => {
-        e.preventDefault();
-        outputPanel.textContent = "";
-
-        console.log(txID.value);
-      });
-    </script>
+    <script src="https://unpkg.com/@aeternity/aepp-sdk@8.2.1/dist/aepp-sdk.browser-script.js"></script>
+    <!-- <script src="contracts.js"></script> -->
+    <script src="tx-query.js"></script>
   </body>
 </html>

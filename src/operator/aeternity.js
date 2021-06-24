@@ -11,6 +11,8 @@ const BigNumber = require("bignumber.js");
 
 const url = "https://testnet.aeternity.io/";
 
+console.log("MAINNET:", process.env.NODE_URL);
+
 module.exports = class Aeternity {
   stopAwaitFunding = false;
 
