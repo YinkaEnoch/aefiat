@@ -65,13 +65,11 @@ const scanForWallets = async () => {
 
   return new Promise((resolve, reject) => {
     detector.scan(async ({ newWallet }) => {
-      console.log(newWallet);
       if (!newWallet) reject();
 
       await sdk.connectToWallet(await newWallet.getConnection());
       await sdk.subscribeAddress("subscribe", "current");
 
-      console.log("We got here");
       resolve();
     });
   });
@@ -106,9 +104,14 @@ const txID = document.querySelector("#tx-id");
 const submitBtn = document.querySelector("[type=submit]");
 const outputPanel = document.querySelector("output");
 
+const spinner = document.createElement("div");
+spinner.classList.add("spinner");
+
 document.querySelector("form").addEventListener("submit", async (e) => {
   e.preventDefault();
+  txID.setAttribute("disabled", true);
   submitBtn.setAttribute("disabled", true); // Disable submit button
+  submitBtn.textContent = "";
   submitBtn.classList.add("spinner-body");
   submitBtn.appendChild(spinner);
   outputPanel.textContent = ""; // Clear output panel
@@ -119,15 +122,15 @@ document.querySelector("form").addEventListener("submit", async (e) => {
     let oracleRes = await checkQuery(queryHash);
     console.log(`ORACLE RESPONSE: ${oracleRes}`);
 
-    if (oracleRes) {
-      outputPanel.textContent = oracleRes;
-      submitBtn.textContent = "Get Details";
-      submitBtn.classList.remove("spinner-body");
-      submitBtn.removeAttribute("disabled");
-    }
-  } catch (e) {
+    outputPanel.textContent = oracleRes;
     submitBtn.textContent = "Get Details";
     submitBtn.classList.remove("spinner-body");
     submitBtn.removeAttribute("disabled");
+    txID.removeAttribute("disabled");
+  } catch (e) {
+    submitBtn.textContent = "Fetch Detail";
+    submitBtn.classList.remove("spinner-body");
+    submitBtn.removeAttribute("disabled");
+    txID.removeAttribute("disabled");
   }
 });

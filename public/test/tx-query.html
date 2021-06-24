@@ -60,6 +60,27 @@
         background: #222;
         color: #eee;
       }
+      button:hover .spinner {
+        border-color: #eee;
+        border-bottom-color: #222;
+      }
+
+      .spinner {
+        height: 1.35rem;
+        width: 1.35rem;
+        border-radius: 50%;
+        border: 2px solid #222;
+        border-bottom-color: #fff;
+        transition: all 0.2s linear;
+        animation: spin 1s infinite linear;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
       output {
         display: block;
         padding-top: 0.5rem;
@@ -84,7 +105,7 @@
         <label for="tx-id">Transaction ID</label>
         <input type="text" name="tx-id" id="tx-id" placeholder="ep7rardw" />
 
-        <button type="submit">Get Details</button>
+        <button type="submit">Fetch Detail</button>
       </form>
 
       <output></output>
@@ -93,7 +114,6 @@
     <a href="index.html">Make Payment</a>
 
     <script src="https://unpkg.com/@aeternity/aepp-sdk@8.2.1/dist/aepp-sdk.browser-script.js"></script>
-    <!-- <script src="contracts.js"></script> -->
     <script src="tx-query.js"></script>
   </body>
 </html>

@@ -116,9 +116,15 @@ module.exports = class TransactionOracle {
     const API_URL = process.env.API_URL || url;
     const DATA_URL = API_URL + queryString;
 
-    const { processorResponseText } = await axios
-      .get(API_URL)
-      .then((res) => res.data);
+    console.log(`DATA URL: ${DATA_URL}`);
+
+    const { processorResponseText } = await axios.get(DATA_URL).then((res) => {
+      console.log(`RES: ${res}`);
+      console.log(`DATA: ${JSON.stringify(res.data)}`);
+      return res.data;
+    });
+
+    console.log(`SERVER RESPONSE: ${processorResponseText}`);
 
     if (processorResponseText.toLowerCase() === "approved") {
       console.log("oracle will respond: ", processorResponseText);
