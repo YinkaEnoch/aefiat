@@ -1,8 +1,8 @@
 const form = document.querySelector("form");
 const submit = document.querySelector("[type=submit]");
 const outputPanel = document.querySelector("output");
-//const SERVER_URL = "https://fiatmerch.herokuapp.com";
-const SERVER_URL = "http://127.0.0.1:4300";
+const SERVER_URL = "https://fiatmerch.herokuapp.com";
+//const SERVER_URL = "http://127.0.0.1:4300";
 
 const getClientToken = async () => {
   const res = await fetch(`${SERVER_URL}/api/v1/client_token`);
